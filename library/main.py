@@ -134,35 +134,35 @@ def main():
         print("5. Изменить статус книги")
         print("6. Выход")
 
-        choice = input("Выберите действие: ")
+        choice = " ".join(input("Выберите действие: ").split())
         if choice == "1":
-            title = input("Введите название книги: ")
-            author = input("Введите автора книги: ")
+            title = " ".join(input("Введите название книги: ").split())
+            author = " ".join(input("Введите автора книги: ").split())
             try:
-                year = int(input("Введите год издания книги: "))
+                year = int(" ".join(input("Введите год издания книги: ").split()))
                 library.add_book(title, author, year)
             except ValueError:
                 print("[ERROR] Некорректно указан год.")
         elif choice == "2":
             try:
-                book_id = int(input("Введите ID книги: "))
+                book_id = int(" ".join(input("Введите ID книги: ").split()))
                 library.delete_book(book_id)
             except ValueError:
                 print("[ERROR] Некорректный ID.")
         elif choice == "3":
-            field = input("Искать по (title, author, year): ").strip()
+            field = " ".join(input("Искать по (title, author, year): ").split())
             if field not in {"title", "author", "year"}:
                 print("[ERROR] Некорректное поле поиска.")
                 continue
-            query = input("Введите значение для поиска: ")
+            query = " ".join(input("Введите значение для поиска: ").split())
             results = library.search_books(query, field)
             library.print_books(results)
         elif choice == "4":
             library.print_books()
         elif choice == "5":
             try:
-                book_id = int(input("Введите ID книги: "))
-                status = input("Введите новый статус (в наличии/выдана): ").strip()
+                book_id = int(" ".join(input("Введите ID книги: ").split()))
+                status = " ".join(input("Введите новый статус (в наличии/выдана): ").split())
                 if status not in {"в наличии", "выдана"}:
                     print("[ERROR] Некорректный статус.")
                     continue
