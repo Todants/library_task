@@ -121,3 +121,7 @@ python .\tests.py -v
 
     ![image](https://github.com/user-attachments/assets/1c238df9-47b4-4c3d-877e-7b8492f6a15b)
 
+-----
+
+Контакты: https://t.me/bylygeme
+
